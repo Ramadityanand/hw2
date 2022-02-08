@@ -80,6 +80,7 @@ Role.destroy_all
 
 # Generate models and tables, according to the domain model
 # TODO!
+# Models are generated using rails generate model XXX command
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
@@ -275,6 +276,10 @@ puts ""
 # Query the movies data and loop through the results to display the movies output
 # TODO!
 
+for movie in Movie.all
+    puts "#{movie.title.ljust(25)} #{movie.year.to_s.ljust(10)} #{movie.MPAA_rating.ljust(10)} #{movie.person.name}"
+end
+
 # Prints a header for the cast output
 puts ""
 puts "Top Cast"
@@ -283,3 +288,7 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
 # TODO!
+
+for roles in Role.all
+    puts "#{roles.movie.title.ljust(30)} #{roles.person.name.ljust(25)} #{roles.character_name.ljust(25)}"
+end
