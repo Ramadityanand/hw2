@@ -171,6 +171,9 @@ movie3.MPAA_rating = "PG-13"
 movie3.person_id = nolan.id
 movie3.save
 
+# Entering data for Roles model
+
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
