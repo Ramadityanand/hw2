@@ -137,12 +137,39 @@ person12.save
 
 # Entering data for Movie model
 
+nolan = Person.where({ name: "Christopher Nolan"})[0]
+bale = Person.where({ name: "Christian Bale"})[0]
+caine = Person.where({ name: "Michael Caine"})[0]
+liam = Person.where({ name: "Liam Neeson"})[0]
+holmes = Person.where({ name: "Katie Holmes"})[0]
+gary = Person.where({ name: "Gary Oldman"})[0]
+heath = Person.where({ name: "Heath Ledger"})[0]
+aaron = Person.where({ name: "Aaron Eckhart"})[0]
+maggie = Person.where({ name: "Maggie Gyllenhaal"})[0]
+tom = Person.where({ name: "Tom Hardy"})[0]
+joe = Person.where({ name: "Joseph Gordon-Levitt"})[0]
+anne = Person.where({ name: "Anne Hathaway"})[0]
+
 movie1 = Movie.new
 movie1.title = "Batman Begins"
 movie1.year = 2005
 movie1.MPAA_rating = "PG-13"
-movie1.person_id = 1
+movie1.person_id = nolan.id
 movie1.save
+
+movie2 = Movie.new
+movie2.title = "The Dark Knight"
+movie2.year = 2008
+movie2.MPAA_rating = "PG-13"
+movie2.person_id = nolan.id
+movie2.save
+
+movie3 = Movie.new
+movie3.title = "The Dark Knight Rises"
+movie3.year = 2012
+movie3.MPAA_rating = "PG-13"
+movie3.person_id = nolan.id
+movie3.save
 
 # Prints a header for the movies output
 puts "Movies"
